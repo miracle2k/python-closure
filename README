@@ -18,3 +18,7 @@ Versions
 
 Version ``YYYYMMDD`` of this package will bundle the corresponding 
 version of the compiler (Closure uses the build date as the version).
+
+
+If you want a new version to be uploaded, open a ticket at the
+`Github page <https://github.com/miracle2k/python-closure>`_.
