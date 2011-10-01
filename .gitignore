@@ -1,0 +1,8 @@
+*.pyc
+
+*.egg-info/
+/dist/
+/build/
+
+/closure/*.jar
+
