@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 setup(
     name="closure",
     description="Closure compiler packaged for Python",
-    long_description=open('README').read(),
+    long_description=open('README.rst').read(),
     author='Michael Elsdörfer',
     author_email='michael@elsdoerfer.com',
     version="20120305",
