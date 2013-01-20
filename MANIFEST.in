@@ -1,1 +1,2 @@
 recursive-include closure *.jar
+include README.rst
