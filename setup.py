@@ -8,7 +8,7 @@ setup(
     long_description=open('README.rst').read(),
     author='Michael Elsdörfer',
     author_email='michael@elsdoerfer.com',
-    version="20121212",
+    version="20140110",
     url="http://pypi.python.org/pypi/closure",
     license='BSD',
     packages=find_packages(),
