@@ -1,7 +1,7 @@
-Call ./get-closure.jar
+Call ./get-closure.sh
 
 Determine the version number of the file just downloaded.
 
 Update version number in ./setup.py
 
-Commit und publish to PyPI.
+Commit and publish to PyPI.
