@@ -1,5 +1,5 @@
 import sys
-import os
+import subprocess
 from pkg_resources import resource_filename
 
 
@@ -8,7 +8,11 @@ def get_jar_filename():
     return resource_filename(__name__, "closure.jar")
 
 
-def main():
-    name = sys.argv[0]
-    os.execlp("java", name, "-jar", get_jar_filename(), *sys.argv[1:])
+def run(*args):
+    cmd_args = ["java", "-jar", get_jar_filename()] + list(args)
+    return subprocess.call(cmd_args)
 
+
+def main():
+    exit_code = run(*sys.argv[1:])
+    sys.exit(exit_code)
