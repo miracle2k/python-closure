@@ -23,7 +23,7 @@ def get_importlib_resources_jar():
     file_manager = ExitStack()
     atexit.register(file_manager.close)
     ref = importlib.resources.files(__name__) / "closure.jar"
-    return file_manager.enter_context(importlib.resources.as_file(ref))
+    return str(file_manager.enter_context(importlib.resources.as_file(ref)))
 
 
 def get_pkg_resources_jar():
