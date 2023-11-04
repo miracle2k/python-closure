@@ -1,10 +1,32 @@
 import sys
 import subprocess
-from pkg_resources import resource_filename
+
+try:
+    # use importlib here instead
+    import atexit
+    import importlib.resources
+    from contextlib import ExitStack
+
+    def get_jar_filename():
+        """Return the full path to the Closure Compiler Java archive."""
+        return get_importlib_resources_jar()
+
+except ImportError:
+    from pkg_resources import resource_filename
+
+    def get_jar_filename():
+        """Return the full path to the Closure Compiler Java archive."""
+        return get_pkg_resources_jar()
 
 
-def get_jar_filename():
-    """Return the full path to the Closure Compiler Java archive."""
+def get_importlib_resources_jar():
+    file_manager = ExitStack()
+    atexit.register(file_manager.close)
+    ref = importlib.resources.files(__name__) / "closure.jar"
+    return file_manager.enter_context(importlib.resources.as_file(ref))
+
+
+def get_pkg_resources_jar():
     return resource_filename(__name__, "closure.jar")
 
 
